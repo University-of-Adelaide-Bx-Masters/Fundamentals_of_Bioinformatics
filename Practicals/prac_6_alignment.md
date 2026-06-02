@@ -1,3 +1,6 @@
+# [Fundamentals of Bioinformatics](https://university-of-adelaide-bx-masters.github.io/Fundamentals_of_Bioinformatics/)
+{:.no_toc}
+
 # Practical 6 - Read Alignment
 {:.no_toc}
 

@@ -1,3 +1,4 @@
+# [Fundamentals of Bioinformatics](https://university-of-adelaide-bx-masters.github.io/Fundamentals_of_Bioinformatics/)
 
 ### Your script should now look something like the script below. 
 
