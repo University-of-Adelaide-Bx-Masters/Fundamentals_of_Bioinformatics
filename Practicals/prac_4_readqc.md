@@ -1,3 +1,6 @@
+# [Fundamentals of Bioinformatics](https://university-of-adelaide-bx-masters.github.io/Fundamentals_of_Bioinformatics/)
+{:.no_toc}
+
 # Practical 4 - FASTQ files and Quality Control
 {:.no_toc}
 
