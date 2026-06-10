@@ -1,12 +1,5 @@
 # [Fundamentals of Bioinformatics](https://university-of-adelaide-bx-masters.github.io/Fundamentals_of_Bioinformatics/)
 
-Course materials for the Fundamentals of Bioinformatics module
-
-
-
-- [VM login instructions](https://university-of-adelaide-bx-masters.github.io/Fundamentals_of_Bioinformatics/Course_materials/vm_login_instructions.html)
-- [VM logout instructions](https://university-of-adelaide-bx-masters.github.io/Fundamentals_of_Bioinformatics/Course_materials/vm_logout_instructions.html)
-
 ## Practicals
 
 **Introduction to BASH**
@@ -22,11 +15,10 @@ Course materials for the Fundamentals of Bioinformatics module
 - Practical 6 - [Read Alignment](http://university-of-adelaide-bx-masters.github.io/Fundamentals_of_Bioinformatics/Practicals/prac_6_alignment.html)
 - Practical 7 - [Variant Calling](http://university-of-adelaide-bx-masters.github.io/Fundamentals_of_Bioinformatics/Practicals/prac_7_variantcall.html)
 
-## Assignment
 
-- [Fundamentals of Bioinformatics Assignment](http://university-of-adelaide-bx-masters.github.io/Fundamentals_of_Bioinformatics/Assignment/fundamentals_of_bioinformatics_assignment.html)
+## Useful Links
 
-## Other Useful Links
-
-- [Overview of file types](http://university-of-adelaide-bx-masters.github.io/Fundamentals_of_Bioinformatics/Course_materials/overview_of_file_types.html)
+- [VM login instructions](https://university-of-adelaide-bx-masters.github.io/Fundamentals_of_Bioinformatics/Course_materials/vm_login_instructions.html)
+- [VM logout instructions](https://university-of-adelaide-bx-masters.github.io/Fundamentals_of_Bioinformatics/Course_materials/vm_logout_instructions.html)
+- [Overview of commonly used bioinformatics file formats](http://university-of-adelaide-bx-masters.github.io/Fundamentals_of_Bioinformatics/Course_materials/overview_of_file_types.html)
 
