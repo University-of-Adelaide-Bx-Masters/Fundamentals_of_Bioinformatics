@@ -22,7 +22,7 @@ Ignore any warning about this being insecure.
 
 You should see the login screen below.
 
-<img src="./images/shell_in_a_box.png" alt="AWS RONIN shell in a box" width="350" style="border: 3px solid grey">
+<img src="./images/shell_in_a_box.png" alt="AWS RONIN shell in a box" width="500" style="border: 3px solid grey">
 
 
 ### 3. Enter username and password for login node
@@ -34,31 +34,34 @@ You won't see anything happening while typing your password. Just finish typing 
 
 You should see something like below if login is successful.
 
-<img src="./images/shell_in_a_box_prompt.png" alt="AWS_RONIN_shell_in_a_box_prompt" height="500" style="border: 3px solid red">
+<img src="./images/shell_in_a_box_prompt.png" alt="AWS_RONIN_shell_in_a_box_prompt" height="500" style="border: 3px solid grey">
 
 ### 4. Tell the login node to get your VM ready
 
 Type `rstudio` and press Enter.
 
-When asked `Would you like to start an Rstudio session?`, type `y` and press enter.
+You'll then be asked `Would you like to start an Rstudio session?` as shown below. Type `y` and press enter. 
 
-<img src="./images/shell_in_a_box_prompt_rstudio.png" alt="AWS_RONIN_shell_in_a_box_rstudio" height="500" style="border: 3px solid black">
-
-<img src="./images/shell_in_a_box_Rstudio_login_prompt.png" alt="AWS_RONIN_shell_log_in_OK" height="500" style="border: 3px solid red">
+<img src="./images/shell_in_a_box_Rstudio_login_prompt.png" alt="AWS_RONIN_shell_log_in_OK" height="500" style="border: 3px solid grey">
 
 
-    **Now you should see the following:** 
+Now you should see the following. 
 
-<img src="./images/shell_in_a_box_running.png" alt="Rstudio_login_from_shell" height="500">
+<img src="./images/shell_in_a_box_running.png" alt="Rstudio_login_from_shell" height="500" style="border: 3px solid grey">
 
 
-Once your VM is ready, (this may take a couple of minutes) instructions on how to login to it will appear, similar to below:
-These include:
+You will likely see a number of `PENDING` messages appear. Keep waiting. 
+During Practicals, login will (usually) be faster than outside of practical times.
+
+Once your VM is ready, (this may take a couple of minutes), the screen will clear and be replaced with instructions on how to login, similar to below:
+
+These instructions include:
 - a web address similar to `http://rstudio-ubuntu2.adelaideuni.cloud:8001`
 - your username for the session (your anumber)
 - a onetime password for the session
 
-<img src="./images/shell_in_a_box_Rstudio_credentials.png" alt="Rstudio_credentials_from_shell" height="500">
+
+<img src="./images/shell_in_a_box_Rstudio_credentials.png" alt="Rstudio_credentials_from_shell" width="500" style="border: 3px solid grey">
 
 ### 5. Login to your VM
 
@@ -71,7 +74,7 @@ Click "Sign in".
 
 **Note:** You have 2 minutes from when the password was generated to login. If you don't login in time, you'll have to start again. 
 
-<img src="./images/Rstudio_AWS_login.png" alt="Rstudio_login_screen" height="500">
+<img src="./images/Rstudio_AWS_login.png" alt="Rstudio_login_screen" height="450" style="border: 3px solid grey">
 
 
 You should now be in your Virtual Machine!!! 
