@@ -1,6 +1,9 @@
 # Connecting to your Virtual Machine
 
 You have each been given access to a virtual machine that runs in a cloud compute environment and is accessed using the IP address below.
+
+`https://rstudio-ubuntuN.adelaideuni.cloud:4200` where `N` is the machine you want to login to.
+
 All cloud computing accounts are private but are identical and we will use these for the entire practical series. 
 Accessing your cloud compute resource is like having your very own server. 
 
@@ -10,15 +13,19 @@ Accessing your cloud compute resource is like having your very own server.
 We recommend Firefox, but Edge/Chrome are also acceptable. Safari has not been tested.
 
 ### 2. Enter your login node address 
-Paste the login node address (`https://rstudio-ubuntuN.adelaideuni.cloud:4200`) into the address bar, where N is your login node number. 
+Paste the login node address (`https://rstudio-ubuntuN.adelaideuni.cloud:4200`) into the address bar, where N is the number of the machine you'll be using.
+
+Outside of practical times, only `ubuntu1` will be available. 
+During practicals, use the machine number allocated to you. 
+ 
 Ignore any warning about this being insecure.
-Make sure the address begins with `https:` and **NOT** `http:`. 
+
 You should see the login screen below.
 
-<img src="./images/shell_in_a_box.png" alt="AWS RONIN shell in a box" height="500">
+<img src="./images/shell_in_a_box.png" alt="AWS RONIN shell in a box" width="350" style="border: 3px solid grey">
 
 
-#### 3. Enter username and password for login node
+### 3. Enter username and password for login node
 
 Enter your Adelaide University anumber (this is your userID) and press enter. 
 
@@ -35,9 +42,9 @@ Type `rstudio` and press Enter.
 
 When asked `Would you like to start an Rstudio session?`, type `y` and press enter.
 
-<img src="./images/shell_in_a_box_prompt_rstudio.png" alt="AWS_RONIN_shell_in_a_box_rstudio" height="500">
+<img src="./images/shell_in_a_box_prompt_rstudio.png" alt="AWS_RONIN_shell_in_a_box_rstudio" height="500" style="border: 3px solid black">
 
-<img src="./images/shell_in_a_box_Rstudio_login_prompt.png" alt="AWS_RONIN_shell_log_in_OK" height="500">
+<img src="./images/shell_in_a_box_Rstudio_login_prompt.png" alt="AWS_RONIN_shell_log_in_OK" height="500" style="border: 3px solid red">
 
 
     **Now you should see the following:** 
@@ -83,8 +90,17 @@ Practice how to [disconnect from your VM](vm_logout_instructions.md) and then re
 
 ## Troubleshooting
 
-If copy and pasting your onetime password doesn't seem to work (and it's not been longer than 2 minutes since it was generated) try the following:
-- Make sure you haven't copied any spaces as well
+#### Can't navigate to the login node
+
+- Make sure the address begins with `https:` and **NOT** `http:`. ie. `https://rstudio-ubuntu1.adelaideuni.cloud:4200` to login to ubuntu1
+- Try a different web browser
+- Try using incognito mode
+
+#### Onetime password isn't working:
+
+If copy and pasting your onetime password doesn't seem to work, check/try the following:
+- Make sure it hasn't been longer than 2 minutes since the password was generated. If it has, you'll need to start again. 
+- Make sure you haven't copied any spaces as well as the password
 - Try to paste as `plain text` into the Password field
 - Copy your password to a plain text document, and then re-copy it to the Password field
 - Last resort, type the password by hand
