@@ -2,33 +2,29 @@
 
 When you are done working on your VM and need to disconnect you first need to logout from RStudio.
 
-1. There is an on/off button at the top right of the RStudio window (shown with an arrow pointing at a red circle)
+### 1. Click the off button in the RStudio browser
 
-    ![RStudio_off_button](./images/RStudio_off_button.png)
+Click the on/off button at the top right of the RStudio window (shown with an arrow pointing at a red circle)
 
-2. Push the off button and you should get this:
+<img src="./images/RStudio_off_button.png" alt="RStudio_off_button" height="400" style="border: 3px solid grey">
 
-    ![Rstudio_ended](./images/RStudio_ended.png)
 
-3. You can then close the browser tab for RStudio. **DO NOT close the tab without pushing the off button first!**
+### 2. Close the RStudio tab
 
-    - Once you have closed the RStudio tab, you can logout from the VM in the login tab:
+Once you see the R Session Ended message (as below), close the RStudio tab.
 
-4. type `exit` at the prompt.
+<img src="./images/RStudio_ended.png" alt="RStudio_ended" height="400" style="border: 3px solid grey">
 
-5.  You will prompted to remove the Rstudio session
-    
-    ```
-    Do you want to remove Rstudio session as well? [yY/nN]
-    ```
-    -type `y`.
+### 3. Shut down the VM from the login node
 
-    You should see this:
+- Find the tab for the login node (the page that gave you the onetime password and web address for your VM session). 
+- Type `exit` and press enter
+- When asked `Do you want to remove Rstudio session as well? [yY/nN]`, type `y` and press enter. You should see the following: 
 
-    ![AWS_Ronin_disconnect](./images/shell_in_a_box_disconnected.png)
+<img src="./images/shell_in_a_box_disconnected.png" alt="AWS_Ronin_disconnect" height="400" style="border: 3px solid grey">
 
-6. Close the tab or exit the browser and you are done.
-
-If you realise at this point that you forgot to do something and want to log back in, just push the __Connect__ button.
+If you realise at this point that you forgot to do something in your VM and want to log back in (using the same 3hr session), just push the __Connect__ button.
+ 
+If not, close this tab or exit the browser. 
 
 [Back to connection instructions](./vm_login_instructions.md)
