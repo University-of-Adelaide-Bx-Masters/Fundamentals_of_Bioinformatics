@@ -1,6 +1,6 @@
 # How to disconnect from your VM
 
-When you are done working on your VM and need to disconnect you first need to logout from RStudio.
+When you are done working on your VM and need to disconnect, you must logout from RStudio and then from the login node as detailed below.
 
 ### 1. Click the off button in the RStudio browser
 
