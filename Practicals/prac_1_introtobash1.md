@@ -12,7 +12,7 @@ The VMs provided each have 2 virtual CPU cores, 16GB of system memory and a lot 
 They are yours to use for the semester, but they are also yours to look after.
 The University runs these VMs on AWS RONIN (Amazon Web Services) and pays by the minute for `cpu` time and for the storage. Because of this, we have implemented auto shutdown of VMs after a 3 hour period. If you are still working in your VM after 3 hours and it shuts down, just log back in and continue working.
 
-**Please [go here](https://university-of-adelaide-bx-masters.github.io/Fundamentals_of_Bioinformatics/Course_materials/vm_login_instructions.html)￼for instructions on connecting to your VM.**
+**Please [go here](https://university-of-adelaide-bx-masters.github.io/Fundamentals_of_Bioinformatics/Course_materials/vm_login_instructions.html) for instructions on connecting to your VM.**
 
 ## RStudio
 
