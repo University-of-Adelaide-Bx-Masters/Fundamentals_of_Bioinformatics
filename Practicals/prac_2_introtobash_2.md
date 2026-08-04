@@ -17,7 +17,6 @@ After our first practical, you should be feeling a bit more confident working in
 
 # **2. Regular Expressions**
 
-## 2.1 Introduction
 Regular expressions are a powerful & flexible way of searching for text strings amongst a large document or file.
 Most of us are familiar with searching for a word within a file, but regular expressions allow us to search for these with more flexibility, particularly in the context of genomics.
 For example, we could search for a sequence that is either `AGT` or `ACT` by using the patterns  `A[GC]T` or  `A(G|C)T`.
@@ -27,7 +26,7 @@ We'll discuss that syntax below, so don't worry if those patterns didn't make mu
 
 Whilst the bash shell has a great capacity for searching a file to matches to regular expressions, this is where languages like *perl* and *python* offer a great degree more power.
 
-## The command `grep`
+## 2.1 The command `grep`
 The built-in command which searches using regular expressions in the terminal is `grep`, which stands for [`g`lobal `r`egular `e`xpression `p`rint](https://en.wikipedia.org/wiki/Grep).
 This function searches a file or input on a line-by-line basis, so patterns contained within a line can be found, but patterns split across lines are more difficult to find.
 This can be overcome by using regular expressions in a programming language like Python or Perl.  
@@ -283,7 +282,7 @@ egrep '^>' Drosophila_melanogaster.BDGP6.ncrna.fa >> SeqIDs.txt
 
 Inspect this once again using `less` or `head` (Hint: Do not use `cat` for large files)
 
-## Redirection Using The Pipe Symbol
+## 3.3 Redirection Using The Pipe `|` Symbol
 
 Sometimes we need to build up our series of commands & send the results of one to another.
 The *pipe* symbol (`|`) is the way we do this & it can literally be taken as placing the output from one command into the input of the next (analogous to using a pipe and redirecting output somewhere new).
