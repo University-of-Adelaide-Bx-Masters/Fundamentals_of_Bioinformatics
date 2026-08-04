@@ -117,10 +117,10 @@ An alternative to this is to use the command `egrep`, which is the same as `grep
 Repeat a few of the above commands using `egrep` instead of `grep -E`.
 
 Capturing text is something you may want to do, however these operations in `bash` are beyond the scope of this course.
-To perform this we usually use the Stream EDitor `sed` and this will be covered in part 2 of this practical.
-For those who are interested, there is a tutorial available at http://www.grymoire.com/Unix/Sed.html. 
+To perform this we usually use the Stream EDitor `sed` and this will be covered in the next practical.
+For those who are interested, there is a tutorial available at [http://www.grymoire.com/Unix/Sed.html](http://www.grymoire.com/Unix/Sed.html). 
 
-For those wanting a quick cheat sheet to remind them of the different variables used in regex, the cheat sheet provided at https://cheatography.com/davechild/cheat-sheets/regular-expressions/ is a great resource. 
+For those wanting a quick cheat sheet to remind them of the different variables used in regex, the cheat sheet provided at [https://cheatography.com/davechild/cheat-sheets/regular-expressions/](https://cheatography.com/davechild/cheat-sheets/regular-expressions/) is a great resource. 
 A useful pair of websites to test your regular expressions are available at [https://regex101.com/](https://regex101.com/)  and [https://regexr.com/](https://regexr.com/). This can be very handy.
 
 # **3. Standard Output**
