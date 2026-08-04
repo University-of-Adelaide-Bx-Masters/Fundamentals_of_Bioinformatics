@@ -80,10 +80,10 @@ grep -E 'fr.[jsm]ol' words
 grep -E 'fr.[^jsm]ol' words
 ```
 ```bash
-grep -E 'fr..ol$' words
+grep -E 'fr.+ol$' words
 ```
 ```bash
-grep -E 'fr.+ol$' words
+grep -E 'fr.+l$' words
 ```
 ```bash
 grep -E 'cat|dog' words
