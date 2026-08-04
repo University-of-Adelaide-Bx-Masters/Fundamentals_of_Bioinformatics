@@ -121,26 +121,7 @@ To perform this we usually use the Stream EDitor `sed` and this will be covered 
 For those who are interested, there is a tutorial available at http://www.grymoire.com/Unix/Sed.html. 
 
 For those wanting a quick cheat sheet to remind them of the different variables used in regex, the cheat sheet provided at https://cheatography.com/davechild/cheat-sheets/regular-expressions/ is a great resource. 
-A useful pair of websites to test your regular expressions are available at https://regex101.com/  and https://regexr.com/. This can be very handy.
-
-## 2.3 Using AI models to help develop `grep` regular expressions
-Writing regular expressions can sometimes be difficult, especially if you are trying to execute a complex command. AI language models 
-can help you develop, test, and understand regex commands by explaining what each part of a pattern does and iteratively suggesting improvements. 
-They are especially helpful in troubleshooting, when you cannot seem to get a command you have written yourself to work properly.
-
-It is important to remember that while AI models can be helpful in developing regex commands, it **should not replace your own understanding**. While they are
-able to generate correct answers in specific contexts, knowing how to tweak the command to fit your actual dataset is an invaluable skill, that will save you more
-time down the track. 
-
-#### Question
-
-Here is a slightly more complicated regex command:
-
-```grep -E '^B.*(ics|ion)$' words```
-
-Ask an AI model to explain what this command does, step by step. Run the command on our dataset, and see if the result is what you expected. 
-
-While AI tools can be very helpful when writing code, they’re not always right. Sometimes an AI will confidently suggest code that looks correct, but actually doesn’t work. This is called a **hallucination**. Unless you have given it express permission to do so, the AI tool will not have access to your files, your data, or your computer; because of this it can make up file names or commands that don’t really exist. Because of this, it’s important to treat AI suggestions as a starting point, test them yourself, and always check the documentation or your output to make sure the code really does what you expect.
+A useful pair of websites to test your regular expressions are available at [https://regex101.com/](https://regex101.com/)  and [https://regexr.com/](https://regexr.com/). This can be very handy.
 
 # **3. Standard Output**
 
