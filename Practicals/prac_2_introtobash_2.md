@@ -310,76 +310,108 @@ wget ftp://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/000/182/855/GCF_000182855.2_ASM1
 gunzip GCF_000182855.2_ASM18285v1_genomic.gff.gz
 ```
 
-This file is in `gff` format, which is very commonly used.
+This file is in GFF format (General Feature Format), which is very commonly used.
 The first 9 lines of this file is what we refer to as a *header*, which contains important information about how the file was generated in a standardised format.
 Many file formats have these structures at the beginning, but for our purposes today we don't need to use any of this information so we can move on.
-Have a look at the beginning of the file just to see what it looks like.
+Have a look at the file using `less`. The `-S` option stops long lines of text from wrapping. 
 
 ```
-head -n12 GCF_000182855.2_ASM18285v1_genomic.gff
+less -S GCF_000182855.2_ASM18285v1_genomic.gff
 ```
 
 Notice the header/comment lines begin with one or two hash symbols, whilst the remainder of the file contains information about the genomic features in tab-separated format.
-As there is a lot of information about each feature, note that each line after the header will probably wrap onto a second line in the terminal.
+
+The columns are listed below. We'll focus on the ones in bold today: 
+1. **Sequence ID**
+2. Source
+3. **Feature type**
+4. Start
+5. Stop
+6. Score
+7. Strand
+8. Phase
+9. **Attributes**
+
 The first feature is annotated as a *region* in the third field, whilst the second feature is annotated as a *gene*.
 
-#### Question
+## Using `grep`
+
+## How many features are annotated in the file?
+{:.no_toc}
 
 
-- *How many features are contained in this file?*
-- *If we tried the following*: `wc -l GCF_000182855.2_ASM18285v1_genomic.gff` *would it be correct?*
+❓ **Question:**
+- When viewing the file with `less -S`, how many header lines did you see?
 
-This will give 4524, but we know the first 9 lines are header lines.
-To count the non-header lines you could try several things:
+Let's count the total number of lines in the file so we know what we're working with.
 
+```bash
+wc -l GCF_000182855.2_ASM18285v1_genomic.gff
 ```
+❓ **Question:**
+- How many lines are there in the file in total?
+
+
+Now let's count the number of non-header lines. 
+Run all three of the commands below and try to work out how they work.
+
+```bash
 grep -vc '^#' GCF_000182855.2_ASM18285v1_genomic.gff
-```
-or
 
-``` 
 grep -c '^[^#]' GCF_000182855.2_ASM18285v1_genomic.gff
+
+grep -v "^#" GCF_000182855.2_ASM18285v1_genomic.gff | wc -l 
 ```
 
-**Make sure you understand both of the above commands as it may not be immediately obvious!**
+❓ **Questions:**
+- How many non-header lines are there?
+- Can you explain how the second command works? 
+- Which command do you find the easiest to understand?
+- How might you count the number of header lines?
 
-There are 9 header/comment lines we can see at the top of the file, is this the number that you got?  
+## How many of the annotated features are "regions" and "genes"?
+{:.no_toc}
 
-What do you think is going on?  
-
-As mentioned above, this file contains multiple features such as *regions*, *genes*, *CDSs*, *exons* or *tRNAs*.
+As mentioned above, this file contains multiple types of features (in column 3) such as *regions*, *genes*, *CDSs*, *exons* or *tRNAs*.
 If we wanted to find how many regions are annotated in this file we could use the processes we've learned above:
 
 ```
 grep -c 'region' GCF_000182855.2_ASM18285v1_genomic.gff
 ```
 
-If we wanted to count how many genes are annotated, the first idea we might have would be to do something similar using a search for the pattern `'gene'`.
+❓ **Questions:**
+- How many regions did the above command count?
+- The command above is simply counting all lines of text that contain the word 'region'. If this number is correct, what assumptions does this make about the structure of the file?
 
-#### Question
+Let's see what the command above was actually counting:
 
-*Do you think this is the number of regions & genes?*
-
-- Try using the above commands without the `-c` to inspect the results.
-- Try searching for the number of coding DNA sequences using the same approach (i.e. CDS) & then add the two numbers?
-- *Is this more than the total number of features we found earlier?*
-- *Can you think of a way around this using regular expressions?*
-
-
-Some of the occurrences of the word *gene* or *region* appear in lines which are not genes or regions.
-We could restrict the search to one of the tab-separated fields by including a white-space character in the search.
-The command:
-
-```
-egrep '\sgene\s' GCF_000182855.2_ASM18285v1_genomic.gff | wc -l
+```bash
+grep 'region' GCF_000182855.2_ASM18285v1_genomic.gff | less -S
 ```
 
-will give a different result again as now we are searching for the word gene surrounded by white-space.
+❓ **Questions:**
+- How/why is the number of regions we counted incorrect?
+- What extra criteria can you think of that would help us to just count the number of features annotated as regions?
+- Run the same commands on the word `gene` and again discuss the question above. 
+- Can you think of a way to just count the number of regions using regular expressions? 
+
+
+As you saw above, some of the occurrences of the word *gene* or *region* appear in lines which are not annotations of genes or regions.
+We can restrict the search to occurrences of these words surrounded by a white-space character with the command below:
+
+```bash
+grep -E '\sregion\s' GCF_000182855.2_ASM18285v1_genomic.gff | wc -l
+```
 
 Note that we've also used the pipe here to count results using the `wc` command.
-We could have also used `egrep` with the `-c` flag set.
+We could have also used `grep` with the `-c` flag set.
 
-### Using `cut`
+❓ **Questions:**
+- Inspect the lines being counted by the command above. Is this command giving us the information we wanted?
+- Run the command above to count the number of features annotated as genes. 
+- How certain are you that this is the correct number?
+
+## Using `cut`
 
 Alternatively, there is a command `cut` available.
 Call the manual page (`man cut`) and inspect the option `-f`.
@@ -405,13 +437,13 @@ This might seem a bit confusing, but this means *don't print lines without delim
 cut -f3 -s GCF_000182855.2_ASM18285v1_genomic.gff | head
 ```
 
-Now we could use our `egrep` approach and we know we're counting the correct field.
+Now we could use our `grep` approach and we know we're counting the correct field.
 
 ```
-cut -f3 -s GCF_000182855.2_ASM18285v1_genomic.gff | egrep -c 'gene'
+cut -f3 -s GCF_000182855.2_ASM18285v1_genomic.gff | grep -E -c 'gene'
 ```
 
-But 2204 is greater than what we got when we searched for 'gene' surrounded by whitespace (2100). 
+But 2204 is greater than what we got when we searched for 'gene' surrounded by whitespace. 
 
 What do you think could be happening? What is the difference between these two approaches that might explain this difference? 
 
@@ -432,7 +464,7 @@ cut -f3 -s GCF_000182855.2_ASM18285v1_genomic.gff | sort | uniq -c
 In the above some of the advantages of the pipe symbol can clearly be seen.
 Note that we haven't edited the file on disk, we've just streamed the data contained in the file into various commands.
 
-### Using `awk`
+## Using `awk`
 
 Sometimes we want to do more than simply extract fields from a file.  
 For this, we can use a very powerful command called `awk`.
@@ -507,5 +539,5 @@ awk -F"\t" '$3 == "gene" {print $3"\t"$9}' GCF_000182855.2_ASM18285v1_genomic.gf
 
 This shows the feature type together with the attributes describing each gene. 
 
-### Question:
-Using the `Name=` attribute, what is the human-readable name of the first gene in this GFF file? What is its gene biotype? 
+**Question:**
+- Using the `Name=` attribute, what is the human-readable name of the first gene in this GFF file? What is its gene biotype? 
