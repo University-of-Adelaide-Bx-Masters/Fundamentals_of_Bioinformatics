@@ -116,9 +116,10 @@ In most of the above commands we used the option `-E` to specify the extended ve
 An alternative to this is to use the command `egrep`, which is the same as `grep -E`.
 Repeat a few of the above commands using `egrep` instead of `grep -E`.
 
-Capturing text is something you may want to do, however these operations in `bash` are beyond the scope of this course.
-To perform this we usually use the Stream EDitor `sed` and this will be covered in the next practical.
-For those who are interested, there is a tutorial available at [http://www.grymoire.com/Unix/Sed.html](http://www.grymoire.com/Unix/Sed.html). 
+## 2.3 Regex Resources
+
+- Regex cheat sheet [here](https://cheatography.com/davechild/cheat-sheets/regular-expressions/) 
+- Go to [regex101](https://regex101.com/) or [regexr](https://regexr.com/), also for testing regular expressions
 
 For those wanting a quick cheat sheet to remind them of the different variables used in regex, the cheat sheet provided at [https://cheatography.com/davechild/cheat-sheets/regular-expressions/](https://cheatography.com/davechild/cheat-sheets/regular-expressions/) is a great resource. 
 A useful pair of websites to test your regular expressions are available at [https://regex101.com/](https://regex101.com/)  and [https://regexr.com/](https://regexr.com/). This can be very handy.
