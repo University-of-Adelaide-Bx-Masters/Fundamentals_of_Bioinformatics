@@ -1,8 +1,13 @@
 # [Fundamentals of Bioinformatics](https://university-of-adelaide-bx-masters.github.io/Fundamentals_of_Bioinformatics/)
+{:.no_toc}
 
-# Introduction to Bash Part 2
+# Practical 2 - Introduction to Bash Part 2
+{:.no_toc}
 
-# Learning outcomes
+* TOC
+{:toc}
+
+# **1. Learning outcomes**
 After our first practical, you should be feeling a bit more confident working in a terminal environment. In today's practical, we’ll build on that by introducing some core skills used in bioinformatics. By the end of the session, you should be able to:
 
 - Understand how regular expressions (regex) works and use them to search text or sequence files.
@@ -10,9 +15,9 @@ After our first practical, you should be feeling a bit more confident working in
 - Work with the redirect symbol (`>`) and pipes (`|`) to link commands together and save results to files.
 - Inspect real FASTA and GFF files and extract useful information from them.
 
-# Regular Expressions
+# **2. Regular Expressions**
 
-## Introduction
+## 2.1 Introduction
 Regular expressions are a powerful & flexible way of searching for text strings amongst a large document or file.
 Most of us are familiar with searching for a word within a file, but regular expressions allow us to search for these with more flexibility, particularly in the context of genomics.
 For example, we could search for a sequence that is either `AGT` or `ACT` by using the patterns  `A[GC]T` or  `A(G|C)T`.
@@ -52,7 +57,7 @@ As well as the series of conventional numbers and characters that we are familia
 | \\                | don't treat the following character in the way you normally would.<br> This is why the first three entries in this table started with a backslash, as this gives them their "special" properties.<br> In contrast, placing a backslash before a `.` symbol will enable it to function as an actual dot/full-stop. |
 
 
-## Pattern Searching
+## 2.2 Pattern Searching
 In this section we'll learn the basics of using the `grep` command & what forms the output can take.
 Firstly, we'll need to get the file that we'll search in this section.
 First **change into your `test` directory** using the `cd` command, then enter the following:
@@ -108,7 +113,6 @@ grep -EwC2 'louse' words
 grep -c 'louse' words
 ```
 
-
 In most of the above commands we used the option `-E` to specify the extended version of `grep`.
 An alternative to this is to use the command `egrep`, which is the same as `grep -E`.
 Repeat a few of the above commands using `egrep` instead of `grep -E`.
@@ -120,7 +124,7 @@ For those who are interested, there is a tutorial available at http://www.grymoi
 For those wanting a quick cheat sheet to remind them of the different variables used in regex, the cheat sheet provided at https://cheatography.com/davechild/cheat-sheets/regular-expressions/ is a great resource. 
 A useful pair of websites to test your regular expressions are available at https://regex101.com/  and https://regexr.com/. This can be very handy.
 
-## Using AI models to help develop `grep` regular expressions
+## 2.3 Using AI models to help develop `grep` regular expressions
 Writing regular expressions can sometimes be difficult, especially if you are trying to execute a complex command. AI language models 
 can help you develop, test, and understand regex commands by explaining what each part of a pattern does and iteratively suggesting improvements. 
 They are especially helpful in troubleshooting, when you cannot seem to get a command you have written yourself to work properly.
@@ -139,7 +143,7 @@ Ask an AI model to explain what this command does, step by step. Run the command
 
 While AI tools can be very helpful when writing code, they’re not always right. Sometimes an AI will confidently suggest code that looks correct, but actually doesn’t work. This is called a **hallucination**. Unless you have given it express permission to do so, the AI tool will not have access to your files, your data, or your computer; because of this it can make up file names or commands that don’t really exist. Because of this, it’s important to treat AI suggestions as a starting point, test them yourself, and always check the documentation or your output to make sure the code really does what you expect.
 
-# Standard Output
+# **3. Standard Output**
 
 All of the output we have seen so far was 'printed' to your terminal.
 Each function returned output to you using a data stream called *standard out*, or `stdout` for short.
@@ -152,7 +156,7 @@ This basic data flow can be visualised in the following chart:
 Note also that everything you've typed on your keyboard is sent to each command as a data stream called `stdin`.
 Any guesses what that is short for?
 
-## Text In the Terminal
+## 3.1 Text In the Terminal
 
 We can display a line of text in `stdout` by using the command `echo`.
 The most simple function that people learn to write in most languages is called `Hello World` and we'll do the same thing today.
@@ -187,7 +191,7 @@ echo ~
 
 **Why did this happen? Think back to the previous prac if you need a hint**
 
-## Sending Output To A File
+## 3.2 Sending Output To A File
 
 ### Using the `>` symbol
 
