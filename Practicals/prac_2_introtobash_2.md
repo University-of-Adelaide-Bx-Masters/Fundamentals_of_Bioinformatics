@@ -299,7 +299,7 @@ ls -lh /usr/bin | less
 Page through the output until you get bored, then hit `q` to quit.
 
 
-# Inspecting genomic files using `bash`
+# **4. Inspecting genomic files using `bash`**
 
 As you may have realised, these file types don't play well with MS Word, Excel and the like.
 We need different ways to look through these and as we go, hopefully you'll get the hang of this.
@@ -334,22 +334,21 @@ The columns are listed below. We'll focus on the ones in bold today:
 
 The first feature is annotated as a *region* in the third field, whilst the second feature is annotated as a *gene*.
 
-## Using `grep`
+## 4.1 Using `grep`
 
-## How many features are annotated in the file?
+#### Question: How many features are annotated in the file?
 {:.no_toc}
 
 
-❓ **Question:**
-- When viewing the file with `less -S`, how many header lines did you see?
+❓ When viewing the file with `less -S`, how many header lines did you see?
 
 Let's count the total number of lines in the file so we know what we're working with.
 
 ```bash
 wc -l GCF_000182855.2_ASM18285v1_genomic.gff
 ```
-❓ **Question:**
-- How many lines are there in the file in total?
+
+❓ How many lines are there in the file in total?
 
 
 Now let's count the number of non-header lines. 
@@ -369,7 +368,7 @@ grep -v "^#" GCF_000182855.2_ASM18285v1_genomic.gff | wc -l
 - Which command do you find the easiest to understand?
 - How might you count the number of header lines?
 
-## How many of the annotated features are "regions" and "genes"?
+#### Question: How many of the annotated features are "regions" and "genes"?
 {:.no_toc}
 
 As mentioned above, this file contains multiple types of features (in column 3) such as *regions*, *genes*, *CDSs*, *exons* or *tRNAs*.
@@ -411,7 +410,7 @@ We could have also used `grep` with the `-c` flag set.
 - Run the command above to count the number of features annotated as genes. 
 - How certain are you that this is the correct number?
 
-## Using `cut`
+## 4.2 Using `cut`
 
 Alternatively, there is a command `cut` available.
 Call the manual page (`man cut`) and inspect the option `-f`.
@@ -464,7 +463,7 @@ cut -f3 -s GCF_000182855.2_ASM18285v1_genomic.gff | sort | uniq -c
 In the above some of the advantages of the pipe symbol can clearly be seen.
 Note that we haven't edited the file on disk, we've just streamed the data contained in the file into various commands.
 
-## Using `awk`
+## 4.3 Using `awk`
 
 Sometimes we want to do more than simply extract fields from a file.  
 For this, we can use a very powerful command called `awk`.
@@ -500,7 +499,7 @@ awk -F"\t" '{print $3}' GCF_000182855.2_ASM18285v1_genomic.gff | less
 
 While the output of `awk` is similar to `cut -f3`, `awk` also allows us to filter rows or process text more easily using simple conditions. One of the most useful features of `awk` is that it can both select rows and extract fields at the same time.
 
-### Filtering with `awk`
+## 4.4 Filtering with `awk`
 
 Instead of using a separate filtering command, we can ask `awk` to select only the rows we want.  
 For example, to print only the lines where the **feature type** (column 3) is `gene`, we can write:
