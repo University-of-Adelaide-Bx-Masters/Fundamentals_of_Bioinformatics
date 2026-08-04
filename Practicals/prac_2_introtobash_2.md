@@ -119,10 +119,8 @@ Repeat a few of the above commands using `egrep` instead of `grep -E`.
 ## 2.3 Regex Resources
 
 - Regex cheat sheet [here](https://cheatography.com/davechild/cheat-sheets/regular-expressions/) 
-- Go to [regex101](https://regex101.com/) or [regexr](https://regexr.com/), also for testing regular expressions
+- Go to [regex101](https://regex101.com/) or [regexr](https://regexr.com/) for testing regular expressions
 
-For those wanting a quick cheat sheet to remind them of the different variables used in regex, the cheat sheet provided at [https://cheatography.com/davechild/cheat-sheets/regular-expressions/](https://cheatography.com/davechild/cheat-sheets/regular-expressions/) is a great resource. 
-A useful pair of websites to test your regular expressions are available at [https://regex101.com/](https://regex101.com/)  and [https://regexr.com/](https://regexr.com/). This can be very handy.
 
 # **3. Standard Output**
 
