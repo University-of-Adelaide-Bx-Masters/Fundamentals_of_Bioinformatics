@@ -127,11 +127,9 @@ They are also an excellent way of ensuring the commands you have used in your re
 Keeping copies of all electronic processes to ensure reproducibility is a very important component of any research.
 Writing scripts requires an understanding of several key concepts which form the foundation of much computer programming, so let's walk our way through a few of them.
 
-## 3.1 Some Important Concepts
-
 Two of the most widely used techniques in programming are that of the `for` loop, and logical tests using an `if` statement.
 
-### `for` Loops (Recursion)
+## 3.1 Recursion with `for` loops
 
 A `for` loop is what we use to cycle through an input one item at a time
 
@@ -156,7 +154,7 @@ In the above loop, the same operation was performed on the variable `i`, but the
 Variables in shell scripts can hold numbers or text strings and don't have to be formally defined as in some other languages.
 We will commonly use this technique to list files in a directory, then to loop through a series of operations on each file.
 
-### `if` Statements (Conditional statements)
+## 3.2 Conditional Statements with `if`
 
 `if` statements are those which only have a binary `yes` or `no` response.
 For example, we could specify things like:
@@ -174,7 +172,7 @@ A final useful trick to be aware of is the use of an exclamation mark to reverse
 A good example of this is the use of the command `!=` as the representation of *not equal to* in a logical test.
 
 
-## 3.2 The shebang and an example script
+## 3.3 The shebang and an example script
 
 Now that we've been through just some of the concepts & tools we can use when writing scripts, it's time to tackle one of our own where we can bring it all together.
 
@@ -230,7 +228,7 @@ Most command line tools use strictly lower-case names, so this is another reason
 
 ❓ In the above script, there are two variables. Although we have initially set them to be one value, they are still variables. What are their names?
 
-## 3.3 Writing and Executing Our First Script
+## 3.4 Writing and Executing Our First Script
 
 Let's create an empty file which will become our script.
 We'll give it the suffix `.sh` as that is the common convention for bash scripts.
@@ -254,7 +252,7 @@ Assuming that you've entered everything correctly, we can now execute this scrip
 bash wellDone.sh
 ```
 
-## 3.4 Setting File Permissions
+## 3.5 Setting File Permissions
 
 Unfortunately, this script cannot be executed without calling `bash` explicitly but we can also enable execution of the file directly by setting the execute flag in the file permissions.
 First let's look at what permissions we have:
@@ -328,7 +326,7 @@ ls -lh *sh
 
 ❓ What will the final 4 in the above settings do?
 
-## 3.5 Modifying our script
+## 3.6 Modifying our script
 
 In the initial script we used two variables `${ME}` and `${MESSAGE}`.
 **Now let's change the variable `${ME}` in the first line  of the script to read as `ME=$1`.**
@@ -364,7 +362,7 @@ for n in Boris Fred; do (./wellDone2.sh ${n}); done
 As a good example, this script could summarise key features in a file.
 Then we could simply pass the script multiple files using this strategy, and write the output to another file using the `>` symbol.
 
-## 3.6 Using `for` Loops
+## 3.7 Using `for` Loops
 
 Here's an example of a script which uses a `for` loop.
 
