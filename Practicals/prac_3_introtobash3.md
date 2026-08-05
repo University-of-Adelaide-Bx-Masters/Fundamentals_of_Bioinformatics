@@ -173,7 +173,7 @@ A final useful trick to be aware of is the use of an exclamation mark to reverse
 A good example of this is the use of the command `!=` as the representation of *not equal to* in a logical test.
 
 
-## 4.Shell Scripts
+## 3.2 The shebang and an example script
 
 Now that we've been through just some of the concepts & tools we can use when writing scripts, it's time to tackle one of our own where we can bring it all together.
 
@@ -190,7 +190,7 @@ The hash symbol generally functions as a comment character in scripts.
 Sometimes we can include lines in a script to remind ourselves what we're trying to do, and we can preface these with the hash to ensure the interpreter doesn't try to run them.
 It's presence as a comment here, followed by the exclamation mark, is specifically looked for by the interpreter but beyond this specific occurrence, comment lines are generally ignored by scripts & programs.
 
-## 4.1 An Example Script
+
 Let's now look at some simple scripts.
 These are really just examples of some useful things you can do & may not really be the best scripts from a technical perspective.
 Hopefully they give you some pointers so you can get going.
@@ -211,23 +211,25 @@ MESSAGE='This is your first script'
 echo -e "Hello ${ME}\n${MESSAGE}\nWell Done!"
 ```
 
-- You may notice some lines that begin with the # character.
+**Comments**
+
+You may notice some lines that begin with the # character.
 These are *comments* which have no impact on the execution of the script, but are written so you can understand what you were thinking when you wrote it.
 If you look at your code 6 months from now, there is a very strong chance that you won't recall exactly what you were thinking, so these comments can be a good place just to explain something to the future version of yourself.
 There is a school of thought which says that you write code primarily for humans to read, not for the computer to understand.
-- Another coding style which can be helpful is the enclosing of each *variable name* in curly braces every time the value is called, e.g. `${ME}`
+
+**Variables**
+
+Another coding style which can be helpful is the enclosing of each *variable name* in curly braces every time the value is called, e.g. `${ME}`
 Whilst not being strictly required, this can make it easy for you to follow in the future when you're looking back.
-- Variables have also been named using strictly upper-case letters.
+
+Variables have also been named using strictly upper-case letters.
 This is another optional coding style, but can also make things clear for you as you look back through your work.
 Most command line tools use strictly lower-case names, so this is another reason the upper-case variable names can be helpful.
 
-**Question:**
+❓ In the above script, there are two variables. Although we have initially set them to be one value, they are still variables. What are their names?
 
-In the above script, there are two variables.
-Although we have initially set them to be one value, they are still variables.
-What are their names?
-
-## 4.2 Writing and Executing Our First Script
+## 3.3 Writing and Executing Our First Script
 
 Let's create an empty file which will become our script.
 We'll give it the suffix `.sh` as that is the common convention for bash scripts.
@@ -251,7 +253,7 @@ Assuming that you've entered everything correctly, we can now execute this scrip
 bash wellDone.sh
 ```
 
-## 4.3 Setting File Permissions
+## 3.4 Setting File Permissions
 
 Unfortunately, this script cannot be executed without calling `bash` explicitly but we can also enable execution of the file directly by setting the execute flag in the file permissions.
 First let's look at what permissions we have:
@@ -327,7 +329,7 @@ ls -lh *sh
 **Question:**
 - What will the final 4 in the above settings do?
 
-## 4.4 Modifying our script
+## 3.5 Modifying our script
 
 In the initial script we used two variables `${ME}` and `${MESSAGE}`.
 **Now let's change the variable `${ME}` in the first line  of the script to read as `ME=$1`.**
@@ -363,7 +365,7 @@ for n in Boris Fred; do (./wellDone2.sh ${n}); done
 As a good example, this script could summarise key features in a file.
 Then we could simply pass the script multiple files using this strategy, and write the output to another file using the `>` symbol.
 
-## 4.5 Using `for` Loops
+## 3.6 Using `for` Loops
 
 Here's an example of a script which uses a `for` loop.
 
@@ -381,14 +383,14 @@ for f in ${FILES};
   done
 ```
 
-#### Task
+### In-class Exercise
 
-Save this as a script in the `Practical_1` folder called `lineCount.sh`.
+Save the code above as a script in the `Practical_1` folder called `lineCount.sh`.
 **Add comments** where you think you need them to make sure you understand what's happening.
 
-*For this particular task, do you really need the `/g` in the `sed` command?*
+❓ For this particular task, do you really need the `/g` in the `sed` command?
 
-## 4.6 A More Advanced Script
+## 3.7 A More Advanced Script
 
 In this section we'll write a script for the dm6:ncrna fasta file.
 Briefly inspect the file before checking the script to remind yourself what it looks like.
@@ -449,3 +451,4 @@ Now run it passing the `.fa` file as the first argument.
 ```
 
 To test regular expressions `regex` the following web sites may be useful [here](https://regex101.com/) and [here](https://regexr.com/).
+
