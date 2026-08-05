@@ -1,8 +1,13 @@
 # [Fundamentals of Bioinformatics](https://university-of-adelaide-bx-masters.github.io/Fundamentals_of_Bioinformatics/)
 
-# Introduction to Bash Part 3
+# Practical 3 - Introduction to Bash Part 3
+{:.no_toc}
 
-# Learning outcomes
+* TOC
+{:toc}
+
+
+# **1. Learning outcomes**
 In our last practical, we introduced you to the concept of regular expressions (regex), and played with a few basic datasets. In today's practical we will build on this further, introducing the command `sed` and writing a couple of basic scripts. By the end of today's practical you should be able to:
 
 - Use `sed` to modify/print text streams and files.
@@ -11,7 +16,7 @@ In our last practical, we introduced you to the concept of regular expressions (
 - Write simple bash scripts that use variables, command substitution, and input arguments.
 - Implement `for` loops and `if` statements to iterate over files and make scripts behave conditionally.
 
-# sed: The Stream Editor
+# **2. `sed`: The Stream Editor**
 
 One additional and very useful command in the terminal is `sed`, which is short for *stream editor*.
 This is a very powerful command which can be a little overwhelming at first.
@@ -24,7 +29,7 @@ For today, there are two key `sed` functionalities that we want to introduce.
 2. Using `sed` to print regions of a file
 
 
-## Altering a file or other input
+## 2.1 Altering a file or other input
 
 `sed` uses *regular expressions* that we have come across under the `grep` section, and we can use these to replace strings or characters within a text string.
 The command works in the form `sed 'SCRIPT' INPUT`, and the script section is where all the action happens.
@@ -79,7 +84,7 @@ Taking care to be clear when writing these types of procedures can be an importa
 (Yes this will happen a lot!!!)
 
 
-## Displaying a region from a file
+## 2.2 Displaying a region from a file
 
 The command `sed` can also be used to replicate the functionality of the `head` & `grep` commands, but with a little more power at your fingertips.
 By default `sed` will print the entire input stream it receives, but setting the option `-n` will turn this off.
@@ -111,7 +116,7 @@ sed -rn '/TGCAGGCTC.+(GA){2}.+/ p' Drosophila_melanogaster.BDGP6.ncrna.fa
 
 Note however, that the line numbers are not present in this output, and the pattern highlighting from `grep` is not present either.
 
-# Writing Scripts
+# **3. Writing Scripts**
 
 Now we've had a look at many of the key tools, we'll move on to writing scripts which is one of the most common things a bioinformatician will do.
 We often do this on a HPC to run long data processing pipelines (or workflows).
@@ -121,7 +126,7 @@ They are also an excellent way of ensuring the commands you have used in your re
 Keeping copies of all electronic processes to ensure reproducibility is a very important component of any research.
 Writing scripts requires an understanding of several key concepts which form the foundation of much computer programming, so let's walk our way through a few of them.
 
-## Some Important Concepts
+## 3.1 Some Important Concepts
 
 Two of the most widely used techniques in programming are that of the `for` loop, and logical tests using an `if` statement.
 
@@ -150,7 +155,7 @@ In the above loop, the same operation was performed on the variable `i`, but the
 Variables in shell scripts can hold numbers or text strings and don't have to be formally defined as in some other languages.
 We will commonly use this technique to list files in a directory, then to loop through a series of operations on each file.
 
-### `If` Statements (Conditional statements)
+### `if` Statements (Conditional statements)
 
 `if` statements are those which only have a binary `yes` or `no` response.
 For example, we could specify things like:
@@ -168,7 +173,7 @@ A final useful trick to be aware of is the use of an exclamation mark to reverse
 A good example of this is the use of the command `!=` as the representation of *not equal to* in a logical test.
 
 
-## Shell Scripts
+## 4.Shell Scripts
 
 Now that we've been through just some of the concepts & tools we can use when writing scripts, it's time to tackle one of our own where we can bring it all together.
 
@@ -185,7 +190,7 @@ The hash symbol generally functions as a comment character in scripts.
 Sometimes we can include lines in a script to remind ourselves what we're trying to do, and we can preface these with the hash to ensure the interpreter doesn't try to run them.
 It's presence as a comment here, followed by the exclamation mark, is specifically looked for by the interpreter but beyond this specific occurrence, comment lines are generally ignored by scripts & programs.
 
-## An Example Script
+## 4.1 An Example Script
 Let's now look at some simple scripts.
 These are really just examples of some useful things you can do & may not really be the best scripts from a technical perspective.
 Hopefully they give you some pointers so you can get going.
@@ -216,14 +221,13 @@ Whilst not being strictly required, this can make it easy for you to follow in t
 This is another optional coding style, but can also make things clear for you as you look back through your work.
 Most command line tools use strictly lower-case names, so this is another reason the upper-case variable names can be helpful.
 
-#### Question
+**Question:**
 
 In the above script, there are two variables.
 Although we have initially set them to be one value, they are still variables.
-*What are their names?*
+What are their names?
 
-### Writing and Executing Our First Script
-
+## 4.2 Writing and Executing Our First Script
 
 Let's create an empty file which will become our script.
 We'll give it the suffix `.sh` as that is the common convention for bash scripts.
@@ -247,7 +251,7 @@ Assuming that you've entered everything correctly, we can now execute this scrip
 bash wellDone.sh
 ```
 
-### Setting File Permissions
+## 4.3 Setting File Permissions
 
 Unfortunately, this script cannot be executed without calling `bash` explicitly but we can also enable execution of the file directly by setting the execute flag in the file permissions.
 First let's look at what permissions we have:
@@ -264,10 +268,8 @@ You should see output similar to this:
 - Note how the first entry is a dash (`-`) indicating this is a file.
 - Next come the three Read/Write/Execute triplets which are `rw-` followed by `rw-` and `r--`
 
-#### Question
-
-
-*Interpret the final triplet? What are these permissions indicating, and for whom?*
+**Question:**
+- Interpret the final triplet? What are these permissions indicating, and for whom?
 
 As you can see, the `x` flag has not been set in any of the triplets, so this file is not executable as a script yet.
 To do this, we simply need to set the `x` flag, then we'll look again using long-listing format.
@@ -322,11 +324,10 @@ chmod 774 wellDone.sh
 ls -lh *sh
 ```
 
-#### Question
+**Question:**
+- What will the final 4 in the above settings do?
 
-*What will the final 4 in the above settings do?*
-
-### Modifying our script
+## 4.4 Modifying our script
 
 In the initial script we used two variables `${ME}` and `${MESSAGE}`.
 **Now let's change the variable `${ME}` in the first line  of the script to read as `ME=$1`.**
@@ -362,7 +363,7 @@ for n in Boris Fred; do (./wellDone2.sh ${n}); done
 As a good example, this script could summarise key features in a file.
 Then we could simply pass the script multiple files using this strategy, and write the output to another file using the `>` symbol.
 
-## Using `for` Loops
+## 4.5 Using `for` Loops
 
 Here's an example of a script which uses a `for` loop.
 
@@ -387,7 +388,7 @@ Save this as a script in the `Practical_1` folder called `lineCount.sh`.
 
 *For this particular task, do you really need the `/g` in the `sed` command?*
 
-## A More Advanced Script
+## 4.6 A More Advanced Script
 
 In this section we'll write a script for the dm6:ncrna fasta file.
 Briefly inspect the file before checking the script to remind yourself what it looks like.
