@@ -1,4 +1,5 @@
 # [Fundamentals of Bioinformatics](https://university-of-adelaide-bx-masters.github.io/Fundamentals_of_Bioinformatics/)
+{:.no_toc}
 
 # Practical 3 - Introduction to Bash Part 3
 {:.no_toc}
@@ -270,8 +271,7 @@ You should see output similar to this:
 - Note how the first entry is a dash (`-`) indicating this is a file.
 - Next come the three Read/Write/Execute triplets which are `rw-` followed by `rw-` and `r--`
 
-**Question:**
-- Interpret the final triplet? What are these permissions indicating, and for whom?
+❓ Interpret the final triplet? What are these permissions indicating, and for whom?
 
 As you can see, the `x` flag has not been set in any of the triplets, so this file is not executable as a script yet.
 To do this, we simply need to set the `x` flag, then we'll look again using long-listing format.
@@ -326,8 +326,7 @@ chmod 774 wellDone.sh
 ls -lh *sh
 ```
 
-**Question:**
-- What will the final 4 in the above settings do?
+❓ What will the final 4 in the above settings do?
 
 ## 3.5 Modifying our script
 
@@ -390,7 +389,7 @@ Save the code above as a script in the `Practical_1` folder called `lineCount.sh
 
 ❓ For this particular task, do you really need the `/g` in the `sed` command?
 
-## 3.7 A More Advanced Script
+# **4. A More Advanced Script**
 
 In this section we'll write a script for the dm6:ncrna fasta file.
 Briefly inspect the file before checking the script to remind yourself what it looks like.
