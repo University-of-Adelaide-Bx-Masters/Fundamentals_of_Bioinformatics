@@ -127,8 +127,10 @@ To assess how the trimming has performed, run FastQC on the paired reads output 
 ```bash
 mkdir -p ~/Practical_alignment/1_trim/FastQC
 
-fastqc -o 1_trim/FastQC -t 2 1_trim/ERR3241917_*.fq.gz
+fastqc -o 1_trim/FastQC -t 2 1_trim/ERR3241917_{1,2}.fq.gz
 ```
+
+- Why did we use the `{1,2}` and not the `*` in the command above to select the files we wanted to run fastqc on?
 
 Take a look at the FastQC report files and compare them with the reports from the raw data.
 - What is the minimum length of the trimmed reads?
@@ -303,7 +305,8 @@ do
 done
 ```
 
-Try and add this loop to your own script making sure that you replace all sample names inside of the loop with the `${SAMPLE}` variable and include the full commands for `fastp` and `fastqc`.  
+Add this loop to your own script and write a `sed` command to automate the replacement of ERR3241917 with `${SAMPLE}`.
+
 To test your script again:
 
 ```bash
