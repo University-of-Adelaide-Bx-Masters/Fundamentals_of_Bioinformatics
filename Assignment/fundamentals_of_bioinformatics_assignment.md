@@ -111,7 +111,10 @@ i. What does the bitwise SAM FLAG 83 indicate? [1 mark]
 
 *If your student number is not listed, please contact Jess or Chelsea to ensure you are added to the list*
 
-You can download your assigned species here: 'http://ftp.ensembl.org/pub/release-100/gff3/' of course you will have to add the relevant additional information to specify your species and the '.100.gff3.gz' file. 
+You can find the gff for your assigned species by going here: 'http://ftp.ensembl.org/pub/release-100/gff3/' and clicking on your assigned species. 
+Then, copy the path for the link ending in '.100.gff3.gz' by right clicking and choosing "Copy link address". Make sure you **DON'T** choose the file ending with `100.abinitio.gff3.gz`. 
+This path can now be used with either `curl` or `wget` to download the file. 
+
 
 | Student Number | Species                         | Taxonomy ID | Common Name                    |
 |:---------|:--------------------------------|------------:|:-------------------------------|
