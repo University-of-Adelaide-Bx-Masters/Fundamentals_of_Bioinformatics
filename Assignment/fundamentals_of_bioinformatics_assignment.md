@@ -109,9 +109,22 @@ i. What does the bitwise SAM FLAG 83 indicate? [1 mark]
 
 ## Species For Question 1
 
-*If your student number is not listed, please contact Anna/Alex to ensure you are added to the list*
+*If your student number is not listed, please contact Jess or Chelsea to ensure you are added to the list*
 
 You can download your assigned species here: 'http://ftp.ensembl.org/pub/release-100/gff3/' of course you will have to add the relevant additional information to specify your species and the '.100.gff3.gz' file. 
+
+| Student Number | Species                         | Taxonomy ID | Common Name                    |
+|:---------|:--------------------------------|------------:|:-------------------------------|
+|a1804545|Stachyris ruficeps|181631|Rufous-Capped Babbler|
+|a1908229|Astyanax mexicanus pachon|7994|Blind Cave Fish|
+|a1922779|Macaca fascicularis|9541|Crab-Eating Macaque|
+|a1930651|Rhinolophus ferrumequinum|59479|Greater Horseshoe Bat|
+|a1951372|Myripristis murdjan|586833|Pinecone Soldierfish|
+|a3223022|Monopterus albus|43700|Swamp Eel|
+|a3225842|Terrapene carolina triunguis|158814|Three-Toed Box Turtle|
+
+<!--- 
+See table below for species previously used (species selected above are also in the table)
 
 | Student Number | Species                         | Taxonomy ID | Common Name                    |
 |:---------|:--------------------------------|------------:|:-------------------------------|
@@ -201,3 +214,5 @@ You can download your assigned species here: 'http://ftp.ensembl.org/pub/release
 |3198989|Pongo abelii|9601|Orangutan|
 |3204028|Petromyzon marinus|7757|Lamprey|
 |1908229|Oncorhynchus tshawytscha|74940|Chinook Salmon|
+--->
+
