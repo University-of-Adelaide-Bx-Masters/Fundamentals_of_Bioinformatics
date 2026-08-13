@@ -5,7 +5,8 @@ It is split into two parts with 30 marks for each part.
 
 ### Submission Details
 
-- All bash/shell scripts should be uploaded as separate `.sh` files. All output files should be submitted as separate `.txt` files.
+- All bash/shell scripts should be uploaded as separate `.sh` files. All output files should be submitted as separate `.txt` files. 
+- **All scripts should use tools and techniques covered in the module**. 
 - Question 4 should be provided as a single pdf. An easy way to do this is to complete your assignment in Word (or another word processor) and export/save your final document as a pdf.  Alternatively, you are welcome to use Rmarkdown, LaTeX, or something similar that can produce pdf output. 
 - Please ensure that this pdf contains your name, student number, and the assignment name (Practical Assignment 1a - Fundamentals of Bioinformatics).
 
