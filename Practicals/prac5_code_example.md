@@ -41,7 +41,7 @@ fastp --thread 2 \
 --html 1_trim/fastp/ERR3241917_fastp.html
 
 # Assess read quality after trimming with fastqc
-fastqc -o 1_trim/FastQC -t 2 1_trim/FastQC/ERR3241917_*.fq.gz
+fastqc -o 1_trim/FastQC -t 2 1_trim/ERR3241917_*.fq.gz
 
 ```
 
