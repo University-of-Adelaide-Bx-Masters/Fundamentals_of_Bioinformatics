@@ -14,6 +14,8 @@ It is split into two parts with 30 marks for each part.
 
 You will need to produce two valid bash scripts and three output files for Part 1 of this assignment. Each bash script must be named in the format axxxxxxx_Q1.sh or axxxxxxx_Q2.sh.
 
+You will be able to write these scripts by repurposing the code and techniques from the first three practicals.
+
 ### Q1. Write a bash script to [14 marks]: 
 a. Download the gff3 file for your assigned species (see bottom of page) to your current directory from Ensembl [1 mark]
 
@@ -23,11 +25,13 @@ c. Count how many gene features have a gene_biotype attribute of protein_coding,
 
 d. Export the results to a file with a name of the form `axxxxxxx_my_species_gff_features.txt` where you use your assigned species name instead of my_species [1 mark]. NB: If the species name is missing or incorrect, no marks will be awarded for this section. The script must also include code to generate one or more comment lines in the output file/table before the table with the genome-build used, (hint: `grep` your gff to find the genome build info as the header is very large in most cases)
 
-e. Include informative comments in your script to explain each step [1 mark]
+e. Include informative comments in your script to explain your code [1 mark]
 
 f. The script must also write the code used to generate the summary (counts) data and count gene features to the output file as part of the file header. [3 marks]
 
+
 ### Q2. For the file we used in the practicals (Drosophila_melanogaster.BDGP6.ncrna.fa), add to the final practical script provided so that  [16 marks]:
+
 a. Two separate output files are now created, titled `axxxxxxx_dmel_ncrna_summary.txt` and `axxxxxxx_dmel_ncrna_chromosome_summary.txt` [1 mark]
 
 b. For the first output file, ensure that:
@@ -46,11 +50,11 @@ c. For the second output file, ensure:
   
   (iii) Print the ID names for ncRNAs found on the Y chromosome [4]
   
-d. Include appropriate comments which make the script easier to understand [1 mark]
+d. Include comments that make the script easier for yourself and others to understand [1 mark]
 
 
 Note: If identical comments are identified in any submissions, a mark of **zero** will be given for this question for all suspicious submissions. 
-We also strongly, **strongly** suggest completing these scripts without the use of generative AI tools. You will be able to write your assignment scripts by repurposing the code and bioinformatics tools we went over in the first three practicals. 
+You will be able to write your assignment scripts by repurposing the code and bioinformatics tools we went over in the first three practicals. 
 
 ## Part 2 - Next Generation Sequencing
 
@@ -61,13 +65,14 @@ https://ftp.ebi.ac.uk/ensemblgenomes/pub/release-51/plants/fasta/arabidopsis_tha
 SRR5882797_10M_1.fastq.gz https://adelaideuniversity.box.com/shared/static/egl3n16r0ziaxlvbs9074xqd1liktnuz.gz
 
 SRR5882797_10M_2.fastq.gz https://adelaideuniversity.box.com/shared/static/g2ly4kzz1blus5juy426i37zl45o38pu.gz
+
 ### Q3. Variant Calling Script [18 marks]
 
- Write a bash script to perform the variant calling analysis tasks listed below. **This script should use tools and techniques that were covered in the module.** 
+Write a bash script to perform the variant calling analysis tasks listed below. **This script should use tools and techniques that were covered in the module.** 
  
- **Note:** [1 mark] will be awarded for placing all files in the directories specified in the instructions below and [2 marks] will be awarded for including clear and concise comments throughout. 
+**Note:** [1 mark] will be awarded for placing all files in the directories specified in the instructions below and [2 marks] will be awarded for including clear and concise comments throughout. 
  
-  Your script should do the following:
+Your script should do the following:
   
 a. Download the reference genome (i.e. fasta file) of the model plant _Arabidopsis thaliana_ to the subdirectory `ref` from the Ensembl ftp directory using the link provided above and either `curl` or `wget`. [1 mark]
 
@@ -83,7 +88,7 @@ f. Align paired-end reads to the genome using `bwa mem`, resulting in a single B
 
 g. Sort and index your BAM file. Remove the unsorted BAM file after you've done this. [3 marks]
 
-h. Call variants and write the vcf to `3_variants`. You do not need to remove duplicates from your sorted BAM file and should instead use your sorted BAM file from step 7 as input for variant calling. [1 mark]
+h. Call variants and write the vcf to `3_variants`. You do not need to mark duplicates for this analysis and should instead use your sorted BAM file from step 7 as input for variant calling. [1 mark]
 
 i. Filter variants to keep only variants with QUAL>=30 and print the number of variants that meet this criteria to standard output (`stdout`). [2 marks]
 
@@ -120,12 +125,16 @@ This path can now be used with either `curl` or `wget` to download the file.
 | Student Number | Species                         | Taxonomy ID | Common Name                    |
 |:---------|:--------------------------------|------------:|:-------------------------------|
 |a1804545|Stachyris ruficeps|181631|Rufous-Capped Babbler|
+|a1907494|Xiphophorus maculatus|8083|Southern Platyfish|
 |a1908229|Astyanax mexicanus pachon|7994|Blind Cave Fish|
 |a1922779|Macaca fascicularis|9541|Crab-Eating Macaque|
 |a1930651|Rhinolophus ferrumequinum|59479|Greater Horseshoe Bat|
+|a1949022|Zonotrichia albicollis|44394|White-Throated Sparrow|
 |a1951372|Myripristis murdjan|586833|Pinecone Soldierfish|
 |a3223022|Monopterus albus|43700|Swamp Eel|
 |a3225842|Terrapene carolina triunguis|158814|Three-Toed Box Turtle|
+
+
 
 <!--- 
 See table below for species previously used (species selected above are also in the table)
